@@ -194,3 +194,23 @@ db.collectionName.find({ key: { $nin: [value1, value2,...] }});
 // example
 db.products.find({ price: { $nin: [400, 5000] }});
 ```
+
+### Logical Operators
+
+### logical and operator: $and
+
+```
+db.collectionName.find({ $and: [{ key: value }, { key: value },...]});
+
+// example
+db.products.find({ $and: [{ price: { $gte: 600}}, { name: 'monitor'}]});
+```
+
+### logical or operator: $or
+
+```
+db.collectionName.find({ $or: [{ key: value }, { key: value },...]});
+
+// example
+db.products.find({ $or: [{ name: 'monitor' }, { price: { $gte: 1000 }}]});
+```
