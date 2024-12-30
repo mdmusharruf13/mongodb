@@ -214,3 +214,36 @@ db.collectionName.find({ $or: [{ key: value }, { key: value },...]});
 // example
 db.products.find({ $or: [{ name: 'monitor' }, { price: { $gte: 1000 }}]});
 ```
+
+### Indexing
+
+- it is used to optimize query, and increase the speed.
+- B-tree data structure is used to implement indexing in mongodb.
+
+**Note:**
+
+- only use indexing for more frequent reading.
+
+### create indexes
+
+```
+db.collectionName.createIndex({ key: value })
+```
+
+### list all indexes
+
+```
+db.collectionName.getIndexes();
+```
+
+### delete index
+
+```
+db.collectionName.dropIndex('key_value');
+```
+
+### execution speed, scans and more...
+
+```
+db.collectionName.find({ key: value }).explain('executionStats');
+```
