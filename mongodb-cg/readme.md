@@ -93,3 +93,28 @@ db.collectionName.findOne(condition);
 ```
 db.collectionName.insertMany([{},{},...]);
 ```
+
+### update objects collection
+
+```
+db.collectionName.update({key:value},{ $set: {key: 'value',....}})
+
+// update({condition for identifying as key-value pair},{key-value pairs to update})
+```
+
+### delete one object from collection
+
+```
+db.collectionName.deleteOne({key: 'value'});
+```
+
+### delete multiple objects from collection
+
+all values must be of the same key from different objects
+
+```
+db.collectionName.deleteMany({key: { $in : [value1, value2,...]}});
+
+// example
+db.products.deleteMany({name: { $in: ['mouse','keyboard']}})
+```
