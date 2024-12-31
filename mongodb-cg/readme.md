@@ -247,3 +247,41 @@ db.collectionName.dropIndex('key_value');
 ```
 db.collectionName.find({ key: value }).explain('executionStats');
 ```
+
+### **CRUD with Nodejs**
+
+### installations
+
+```
+npm init -y
+npm install express
+npm install mongodb
+```
+
+### import, initialize and connect to Database
+
+```js
+const express = require("express");
+const MongoClient = require("mongodb").MongoClient;
+
+const app = express();
+const url = `mongodb://localhost:27017`;
+let db;
+let dbName = "practice";
+let collectionName = "review";
+
+async function connectToDB() {
+  try {
+    const client = await MongoClient.connect(`${url}/practice`);
+    db = client.db(dbName);
+    console.log("Connected to Database");
+  } catch (err) {
+    console.error("failed to connect mongodb", err);
+  }
+}
+connectToDB();
+
+app.listen(4000, () => {
+  console.log("server running on 4000");
+});
+```
