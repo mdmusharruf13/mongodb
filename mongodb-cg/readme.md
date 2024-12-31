@@ -319,3 +319,22 @@ app.get("/getData", async (req, res) => {
   }
 });
 ```
+
+### Insert data into database using POST request
+
+```js
+app.post("/insert", async (req, res) => {
+  try {
+    if (!db) {
+      return res.status(500).send("Database not initialized");
+    }
+    const result = await db
+      .collection(collectionName)
+      .insertOne({ name: "mechanical keyboard", price: 4000 });
+    res.send(result);
+  } catch (err) {
+    console.error("Error fetching data", err);
+    res.status(500).send("error fetching data");
+  }
+});
+```
