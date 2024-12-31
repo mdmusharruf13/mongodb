@@ -9,3 +9,7 @@
 #### 3. MongoDB Compass (Optional GUI) [Download](https://www.mongodb.com/try/download/compass)
 
 #### 4. Programming Language Driver [Download](https://www.mongodb.com/docs/drivers/)
+
+### MongoDB Practice from tutorial
+
+#### Practice 1 - [checkout](./mongodb-cg/)
