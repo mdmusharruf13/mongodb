@@ -302,3 +302,20 @@ app.get("/", async (req, res) => {
   }
 });
 ```
+
+### Get all Objects of collection using GET request
+
+```js
+app.get("/getData", async (req, res) => {
+  try {
+    if (!db) {
+      return res.status(500).send("Database not initialized");
+    }
+    const result = await db.collection(collectionName).find().toArray();
+    res.send(result);
+  } catch (err) {
+    console.error("Error fetching data", err);
+    res.status(500).send("error fetching data");
+  }
+});
+```
