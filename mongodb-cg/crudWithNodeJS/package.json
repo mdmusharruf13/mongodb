@@ -1,0 +1,15 @@
+{
+  "name": "crudwithnodejs",
+  "version": "1.0.0",
+  "description": "mongodb crud operations with express.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "musharruf",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongodb": "^6.12.0"
+  }
+}
