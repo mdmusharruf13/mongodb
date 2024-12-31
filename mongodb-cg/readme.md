@@ -338,3 +338,25 @@ app.post("/insert", async (req, res) => {
   }
 });
 ```
+
+### Update data of a collection using Put
+
+```js
+app.put("/updateOne", async (req, res) => {
+  try {
+    if (!db) {
+      res.status(500).send("Database not initialized");
+    }
+    const result = await db
+      .collection(collectionName)
+      .updateOne(
+        { name: { $eq: "gaming mouse" } },
+        { $set: { name: "optical mouse" } }
+      );
+    res.send(result);
+  } catch (err) {
+    console.error("Error fetching data", err);
+    res.status(500).send("error fetching data");
+  }
+});
+```

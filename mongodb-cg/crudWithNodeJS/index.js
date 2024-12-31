@@ -58,6 +58,19 @@ app.post("/insert", async (req, res) => {
     }
 });
 
+app.put("/updateOne", async (req, res) => {
+    try {
+        if (!db) {
+            res.status(500).send("Database not initialized");
+        }
+        const result = await db.collection(collectionName).updateOne({ name: { $eq: 'gaming mouse' } }, { $set: { name: "optical mouse" } });
+        res.send(result);
+    } catch (err) {
+        console.error('Error fetching data', err);
+        res.status(500).send('error fetching data');
+    }
+});
+
 app.listen(4000, () => {
     console.log('server running on 4000');
 });
