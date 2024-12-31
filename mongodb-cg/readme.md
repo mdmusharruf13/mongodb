@@ -285,3 +285,20 @@ app.listen(4000, () => {
   console.log("server running on 4000");
 });
 ```
+
+### GET Request for listing collections in one DB
+
+```js
+app.get("/", async (req, res) => {
+  try {
+    if (!db) {
+      res.status(500).send("Database not initialized");
+    }
+    const result = await db.listCollections().toArray();
+    res.send(result);
+  } catch (err) {
+    console.log("Error fetching data");
+    res.status(500).send("Error fetching data", err);
+  }
+});
+```
