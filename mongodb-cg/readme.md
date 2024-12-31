@@ -360,3 +360,22 @@ app.put("/updateOne", async (req, res) => {
   }
 });
 ```
+
+### delete data from a collection using DELETE request
+
+```js
+app.delete("/deleteOne", async (req, res) => {
+  try {
+    if (!db) {
+      res.status(500).send("Database not initialized");
+    }
+    const result = await db
+      .collection(collectionName)
+      .deleteOne({ name: { $eq: "optical mouse" } });
+    res.send(result);
+  } catch (err) {
+    console.error("Error fetching data", err);
+    res.status(500).send("error fetching data");
+  }
+});
+```
