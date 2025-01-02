@@ -70,3 +70,32 @@ db.sample.find({}, {name: 1});
 ```
 db.collectionName.findOne();
 ```
+
+### Method chaining
+
+```
+db.collectionName.find().count();
+db.collectionName.find().limit(number);
+```
+
+### sorting
+
+```
+db.collectionName.find().sort({key: number})
+
+// example - sorting based on names
+db.sample.find().sort({name: 1});
+```
+
+### operators
+
+```
+// greater than equal operator
+db.collectionName.find({key: {$gte: value}});
+
+// or operator
+db.collectionName.find({$or: [{key: value}, {key: value}]});
+
+// in operator
+db.collectionName.find({key: {$in: [value1, value2, ...]}});
+```
