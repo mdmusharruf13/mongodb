@@ -99,3 +99,28 @@ db.collectionName.find({$or: [{key: value}, {key: value}]});
 // in operator
 db.collectionName.find({key: {$in: [value1, value2, ...]}});
 ```
+
+### delete one object
+
+```
+db.collectionName.deleteOne({key: value});
+```
+
+### delete multiple object
+
+```
+db.collectionName.deleteMany({key: value});
+db.collectionName.deleteMany({key: {$in: [value1, value2,...]}});
+```
+
+### update one object
+
+```
+db.collectionName.updateOne({key: value}, {$set: {key: value}});
+```
+
+### update many object with operator
+
+```
+db.collectionName.updateMany({key: {$lt: value}}, {$set: {key: newValue}});
+```
