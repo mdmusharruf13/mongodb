@@ -31,3 +31,42 @@ show collections;
 ```
 db.createCollection(collectionName);
 ```
+
+### Adding documents
+
+```
+db.collectionName.insertOne({key: value})
+```
+
+### Adding documents multiple documents
+
+```
+db.collectionName.insertMany([{key: value}, [key: value], ...])
+```
+
+### Get all data of a collection
+
+```
+db.collectionName.find();
+```
+
+### find Particular data
+
+```
+db.collectionName.find({key: value});
+```
+
+### find particular data get specific field
+
+```
+db.collectionName.find({}, {key: anyNumber});
+
+// example
+db.sample.find({}, {name: 1});
+```
+
+### finding one object
+
+```
+db.collectionName.findOne();
+```
