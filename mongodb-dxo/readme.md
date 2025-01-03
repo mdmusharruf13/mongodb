@@ -124,3 +124,11 @@ db.collectionName.updateOne({key: value}, {$set: {key: value}});
 ```
 db.collectionName.updateMany({key: {$lt: value}}, {$set: {key: newValue}});
 ```
+
+### Installations
+
+```
+npm init
+npm i express
+npm i mongodb
+```
