@@ -17,5 +17,8 @@ async function connectToDB() {
     }
 }
 
-module.exports = { connectToDB };
+async function closeConnection() {
+    await client.close();
+}
 
+module.exports = { connectToDB, closeConnection };

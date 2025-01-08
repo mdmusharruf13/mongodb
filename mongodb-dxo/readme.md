@@ -241,3 +241,13 @@ async function main() {
 }
 main();
 ```
+
+### Close connection
+
+```
+async function closeConnection() {
+    await client.close();
+}
+
+module.exports = { closeConnection };
+```
