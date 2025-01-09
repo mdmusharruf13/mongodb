@@ -251,3 +251,9 @@ async function closeConnection() {
 
 module.exports = { closeConnection };
 ```
+
+### Mongoose installation
+
+```
+npm i mongoose
+```
